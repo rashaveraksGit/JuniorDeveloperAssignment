@@ -4,6 +4,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Raptor.Core.Utilities;
 using Raptor.Core.Utilities.Domain;
+using SharedModel.Model;
 using SharedModel.Services;
 
 namespace OrderProcessing.WorkflowSteps

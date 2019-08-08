@@ -24,7 +24,7 @@ namespace OrderProcessingTest
                 });
 
             var order = CustomerStatusHelperTest.GetOrder(DateTime.UtcNow, 700);
-            var context = new OrderProcessing.OrderContext(order)
+            var context = new OrderContext(order)
             {
                 Customer = customer,
             };

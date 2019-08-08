@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Raptor.Core.Utilities.Domain;
+using SharedModel.Model;
 using SharedModel.Repositories;
 
 namespace OrderProcessing.WorkflowSteps

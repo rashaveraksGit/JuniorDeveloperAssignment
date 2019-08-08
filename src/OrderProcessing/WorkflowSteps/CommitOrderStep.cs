@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Raptor.Core.Utilities.Domain;
+using SharedModel.Model;
 using SharedModel.Repositories;
 
 namespace OrderProcessing.WorkflowSteps

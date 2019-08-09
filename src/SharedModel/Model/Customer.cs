@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Raptor.Core.Utilities.Domain;
 
 namespace SharedModel.Model
 {

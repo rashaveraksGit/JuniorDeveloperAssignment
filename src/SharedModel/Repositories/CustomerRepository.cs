@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using Raptor.Core.Utilities.Domain;
 using SharedModel.Model;
 
 namespace SharedModel.Repositories

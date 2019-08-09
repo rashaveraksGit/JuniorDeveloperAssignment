@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Raptor.Core.Utilities.Domain;
 using Serilog;
 using SharedModel.Model;
 

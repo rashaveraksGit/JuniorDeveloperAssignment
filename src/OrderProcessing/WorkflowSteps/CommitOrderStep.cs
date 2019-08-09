@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Raptor.Core.Utilities.Domain;
+﻿using System.Threading.Tasks;
 using SharedModel.Model;
 using SharedModel.Repositories;
 

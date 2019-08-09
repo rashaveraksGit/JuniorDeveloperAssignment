@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Raptor.Core.Utilities.Domain;
 using SharedModel.Model;
 
 namespace OrderProcessing

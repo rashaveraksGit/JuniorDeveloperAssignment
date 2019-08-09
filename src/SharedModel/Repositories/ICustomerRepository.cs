@@ -1,5 +1,4 @@
-﻿using Raptor.Core.Utilities.Domain;
-using SharedModel.Model;
+﻿using SharedModel.Model;
 
 namespace SharedModel.Repositories
 {

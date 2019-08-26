@@ -22,13 +22,11 @@ namespace OrderProcessing
         {
 
             
-            var orderItems = message.Basket.Select(b => _productRepository.Products[b]);
-
             var order = new Order()
             {
                 FullName = message.FullName,
                 EmailAddress = message.Emailaddress,
-                Basket = orderItems.ToArray()
+                Basket = message.Basket.Select(itemId=>new BasketItem() { ItemId = itemId}).ToArray()
 
             };
 

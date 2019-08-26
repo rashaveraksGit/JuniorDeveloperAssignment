@@ -19,7 +19,7 @@ namespace SharedModel.Model
         public string FullName { get; set; }
         public string EmailAddress { get; set; }
 
-        public Item[] Basket { get; set; }
+        public BasketItem[] Basket { get; set; }
         public string DíscountLevel { get; set; }
 
         public double DiscountPercentage { get; set; }

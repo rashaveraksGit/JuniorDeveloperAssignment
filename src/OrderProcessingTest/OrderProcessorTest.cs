@@ -31,8 +31,8 @@ namespace OrderProcessingTest
                 EmailAddress = "tga@raptor.dk",
                 Basket = new[]
                 {
-                    new Item() {Id = 1, Name = "Shoes", Price = 299.95},
-                    new Item() {Id = 1, Name = "Belt", Price = 50},
+                    new BasketItem() {ItemId = 1,  Price = 299.95},
+                    new BasketItem() {ItemId = 2,  Price = 50},
                 }
 
             };
@@ -56,8 +56,8 @@ namespace OrderProcessingTest
                 OrderDate = DateTime.UtcNow,
                 Basket = new[]
                 {
-                    new Item() {Id = 1, Name = "Shoes", Price = 299.95},
-                    new Item() {Id = 1, Name = "Belt", Price = 50},
+                    new BasketItem() {ItemId = 1, Price = 299.95},
+                    new BasketItem() {ItemId = 1, Price = 50},
                 }
 
             };
@@ -72,7 +72,7 @@ namespace OrderProcessingTest
                 OrderDate = DateTime.UtcNow.AddDays(-10),
                 Basket = new[]
                 {
-                    new Item() {Id = 1, Name = "Shorts", Price = 200},
+                    new BasketItem() {ItemId = 1,  Price = 200},
                   
                 }
 

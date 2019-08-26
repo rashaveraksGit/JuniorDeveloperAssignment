@@ -137,7 +137,7 @@ namespace OrderProcessingTest
             {
                 EmailAddress = "gnu@email.dk",
                 OrderDate = orderDate,
-                Basket = new Item[] {new Item() {Name = "item1", Price = basketValue}}
+                Basket = new BasketItem[] {new BasketItem() {ItemId=1,Price= basketValue}}
             };
         }
 

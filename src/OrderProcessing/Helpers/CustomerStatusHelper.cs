@@ -31,6 +31,9 @@ namespace OrderProcessing.Helpers
             if (ordersWithinDateCriteria.SelectMany(o => o.Basket).Sum(b => b.Price) < nextStatusLevel.MinimumAmountCriteria)
                 return false;
 
+            if (nextStatusLevel.Level - customer.Status.Level > 1)
+                return false;
+
             return true;
         }
     }

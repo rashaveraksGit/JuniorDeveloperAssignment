@@ -129,7 +129,65 @@ namespace OrderProcessingTest
             Assert.IsFalse(isQualified);
         }
 
+        [Test]
+        public void WhenGoldCustomerHasOrdersWithin30DaysWithAValueOfOver2000ThenHeIsQualified()
+        {
+            var customer = GetCustomer("Gold",
+                2,
+                new List<Order>()
+                {
+                    GetOrder(DateTime.UtcNow, 2000),
 
+                });
+
+            var statusRepo = new CustomerStatusLevelRepository();
+
+            var nextLevel = statusRepo.GetNextLevel(customer.Status.Level);
+
+            var isQualified = customer.IsQualifiedForNextLevel(nextLevel, 7);
+
+            Assert.IsTrue(isQualified);
+        }
+
+        [Test]
+        public void WhenGoldCustomerWasLastBumpedLessThanSevenDaysAgoHeDoesNotQualify()
+        {
+            var customer = GetCustomer("Gold",
+                2,
+                new List<Order>()
+                {
+                    GetOrder(DateTime.UtcNow, 700),
+
+                }, DateTime.UtcNow.AddDays(-1));
+
+            var statusRepo = new CustomerStatusLevelRepository();
+
+            var nextLevel = statusRepo.GetNextLevel(customer.Status.Level);
+
+            var isQualified = customer.IsQualifiedForNextLevel(nextLevel, 7);
+
+            Assert.IsFalse(isQualified);
+        }
+
+        [Test]
+        public void WhenSilverCustomerHasOrdersWithin30DaysWithAValueOfOver2000ThenHeIsNotQualifiedForPlatinum()
+        {
+            var customer = GetCustomer("Silver",
+                1,
+                new List<Order>()
+                {
+                    GetOrder(DateTime.UtcNow, 2000),
+
+                });
+
+            var statusRepo = new CustomerStatusLevelRepository();
+
+            var platinumLevel = statusRepo.GetNextLevel(customer.Status.Level + 1);
+
+            var isQualified = customer.IsQualifiedForNextLevel(platinumLevel, 7);
+
+            Assert.IsFalse(isQualified);
+        }
 
         public static Order GetOrder(DateTime orderDate,double basketValue)
         {

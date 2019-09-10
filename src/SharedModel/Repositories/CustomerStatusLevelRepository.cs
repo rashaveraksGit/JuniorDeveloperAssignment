@@ -17,6 +17,7 @@ namespace SharedModel.Repositories
 
         public CustomerStatusLevel GetNextLevel(int level)
         {
+
             return GetCustomerStatuses().FirstOrDefault(c => c.Level == level + 1);
         }
 
@@ -59,7 +60,15 @@ namespace SharedModel.Repositories
                     NumberOfOrdersCriteria = 1,
                     Discount = 15
                 },
-
+                new CustomerStatusLevel()
+                {
+                    Name = "Platinum",
+                    Level = 3,
+                    MinimumAmountCriteria = 1000,
+                    NumberOfDaysCriteria = 30,
+                    NumberOfOrdersCriteria = 1,
+                    Discount = 20
+                },
             };
         }
     }

@@ -58,6 +58,29 @@ namespace OrderProcessingTest
             Assert.IsTrue(result.IsFailure);
         }
 
+        [Test]
+        public async Task WhenTheItemIsNotInStockListThenReturnFail()
+        {
+            var stockItemCheckStep = new CheckItemStockStep(new ProductRepository());
+            var customer = CustomerStatusHelperTest.GetCustomer("Silver",
+                1,
+                new List<Order>()
+                {
+                    CustomerStatusHelperTest.GetOrder(DateTime.UtcNow, 700),
+
+                });
+
+            var order = GetOrder(DateTime.UtcNow, 700, 4);
+            var context = new OrderContext(order)
+            {
+                Customer = customer,
+            };
+
+            var result = await stockItemCheckStep.Run(context);
+            Assert.IsTrue(result.IsFailure);
+            Assert.AreEqual("Invalid ItemId", result.Error);
+        }
+
         public static Order GetOrder(DateTime orderDate, double basketValue, int itemId)
         {
             return new Order()

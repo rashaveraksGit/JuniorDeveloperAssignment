@@ -150,7 +150,7 @@ namespace OrderProcessingTest
         }
 
         [Test]
-        public void WhenGoldCustomerWasLastBumpedLessThanSevenDaysAgoHeDoesNotQualify()
+        public void WhenGoldCustomerHasOrdersWithin30DaysWithAValueLessThan1000ThenHeIsNotQualified()
         {
             var customer = GetCustomer("Gold",
                 2,
